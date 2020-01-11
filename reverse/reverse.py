@@ -44,14 +44,23 @@ class LinkedList:
 
   def reverse_list(self):
     # TO BE COMPLETED
-    prev = None
-    cur = self.head 
-    while cur:
-      nxt = cur.next_node
-      cur.next_node = prev
+    # prev = None
+    # cur = self.head 
+    # while cur:
+    #   nxt = cur.next_node
+    #   cur.next_node = prev
 
-      prev = cur 
-      cur = nxt
-    self.head= prev 
+    #   prev = cur 
+    #   cur = nxt
+    # self.head= prev 
 
 
+    def recursive_rev(cur, back):
+      if not cur: #if cur is None
+        return back 
+      fwd = cur.next_node
+      cur.next_node = back 
+      back = cur  
+      cur = fwd 
+      return recursive_rev(cur, back)
+    self.head = recursive_rev(cur = self.head, back = None)
