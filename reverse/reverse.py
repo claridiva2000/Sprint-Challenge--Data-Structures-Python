@@ -55,7 +55,7 @@ class LinkedList:
     # self.head= prev 
 
 
-    def recursive_rev(cur, back):
+    def recursive_rev(cur, back): #O(n)
       if not cur: #if cur is None
         return back 
       fwd = cur.next_node
