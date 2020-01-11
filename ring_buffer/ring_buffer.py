@@ -8,7 +8,20 @@ class RingBuffer:
         self.storage = DoublyLinkedList()
 
     def append(self, item):
-        pass
+        self.current = self.storage.head
+        count = 0
+        while count < self.capacity:
+            #check is storage is empty. 
+            if self.storage.head is None and self.storage.tail is None:
+                #if it is, create a new node to the head and point head & tail to it.
+                self.storage.add_to_head(item)
+                count += 1
+            else:
+                # add new node to the tail
+                self.storage.add_to_tail(item)
+                # turn into a circular linked list by connected head and tail together. like a chain necklace.
+                self.storage.tail.next, self.storage.head.prev = self.storage.head, self.storage.tail
+                count += 1
 
     def get(self):
         # Note:  This is the only [] allowed
