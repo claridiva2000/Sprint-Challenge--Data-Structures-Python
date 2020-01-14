@@ -44,7 +44,7 @@ class RingBuffer:
         return list_buffer_contents
 
 
-# My attempt to solve using a circular linked list and no array. mostly because i didn't notice the get function right away. was close, but too complicated.I don't want to delete it because i'm happy to have gotten as far as i did before realizing i was working too hard. also, the test wasn't set up this way. :-) 
+# My attempt to solve using a circular linked list and no array. mostly because i didn't notice the get function right away. I don't want to delete it because i'm happy to have gotten as far as i did before realizing i was working too hard. also, the test wasn't set up this way, and this self contained method would only work if it was writtend directly inside the linked list class. :-) 
 
    # self.current = self.storage.head
         # count = 0
